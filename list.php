@@ -5,32 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 
-    <title>List</title>
+    <title>List View</title>
+
+    <script>
+        function displayItem(item) {
+            // console.log("clicked item: " + item);
+            $selecteItem = item;
+            console.log("clicked item: " + $selecteItem);
+        }
+    </script>
 </head>
 <body>
     
-    <h1 class="title">To-Do List</h1>
-
+    <h1 class="title">To-Do List View</h1>
+    
     <?php
-    $host = "192.168.1.200";
-    $user = "dbuser";
-    $password = "password";
-    $database = "mydb";
-    $table = "mytable";
+    include 'vars.php';
+
+    function displayItem($item) {
+        // echo "<li> $item <button onclick='displayItem(\"$item\")' > edit </button></li>";
+        $id = $item['id'];
+        $value = $item['value'];
+        echo "<p>$id - $value </p>";
+    }
 
     try {
         $db = new PDO("mysql:host=$host;dbname=$database", $user, $password);
-        // $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-        echo "<ul class='buttonText'>"; 
-        foreach($db->query("SELECT value FROM $table") as $row) {
-            echo "<li class='buttonText'>" . $row['value'] . "</li>";
+
+        // echo "<ul class='buttonText'>"; 
+        foreach($db -> query("SELECT * FROM $table") as $row) {
+            // $item = $row['value'];
+            displayItem($row);
         }
-        echo "</ul>";
+        // echo "</ul>";
+
     } catch (PDOException $e) {
-        print "Error!: " . $e->getMessage() . "<br/>";
+        print "Error!: " . $e -> getMessage() . "<br/>";
         die();
     }
     ?>
 
+    <a class="button" href="index.php">Home</a>
+    <a class="button" href="item.php">Item</a>
+    
 </body>
 </html>

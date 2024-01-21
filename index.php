@@ -15,7 +15,7 @@
 
     <div class="space"></div>
 
-    <a class="button" href="list.php">Go To List</a>
+    <a class="button" href="list.php">List View</a>
 </body>
 
 </html>
