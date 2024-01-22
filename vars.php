@@ -1,7 +1,4 @@
 <?php
-// Selected Item.
-$selecteItem;
-
 // DB Connection.
 $host = "192.168.1.200";
 $user = "dbuser";

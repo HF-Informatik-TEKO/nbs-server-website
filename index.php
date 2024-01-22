@@ -11,11 +11,12 @@
 <body>
     <h1 class="title">Index</h1>
 
-    <p>Welcome to the <br/><strong>WEB-TASKLIST</strong>!</p>
+    <p class="subtitle">Welcome to the <br/><strong>THROW-AWAY-TASKLIST</strong>!</p>
+    <p class="authorText">by Beat Zimmermann<br/>Z-TIN-21-T-a<br/>Semester 5</p>
 
-    <div class="space"></div>
-
-    <a class="button" href="list.php">List View</a>
+    <div class="space">
+        <a class="button" href="listview.php">List View</a>
+        <a class="button" href="info.php">PHP Info</a>
+    </div>
 </body>
-
 </html>
