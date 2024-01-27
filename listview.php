@@ -21,13 +21,13 @@
 
     try {
         $db = new PDO("mysql:host=$host;dbname=$database", $user, $password);
+
         foreach($db -> query("SELECT * FROM $table") as $row) {
             // $item = $row['value'];
             displayItem($row);
         }
     } catch (PDOException $e) {
         print "Error!: " . $e -> getMessage() . "<br/>";
-        die();
     }
 
     if(isset($_POST['btn_delete_all']) ) {
@@ -44,7 +44,6 @@
     
         } catch (PDOException $e) {
             print "Error!: " . $e -> getMessage() . "<br/>";
-            die();
         }
     }
     ?>

@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1 class="title">PHP Info</h1>
+    
     <?php
     phpinfo();
     ?>
